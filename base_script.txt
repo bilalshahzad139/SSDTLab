@@ -1,0 +1,24 @@
+
+CREATE TABLE [dbo].[StatusTypes](
+	[StatusTypeID] [int] NOT NULL primary key,
+	[StatusType] [varchar](50) NULL
+)
+GO
+CREATE TABLE [dbo].[Users](
+	[UserID] [int] NOT NULL primary key,
+	[Login] [varchar](100) NULL,
+	[Password] [varchar](100) NULL,
+	[Email] [varchar](100) NULL)
+
+GO
+
+
+GO
+Create Procedure [dbo].[GetUserById]
+@UserID int
+As
+Begin
+ Select * from dbo.Users where UserID = @UserID
+End
+
+
